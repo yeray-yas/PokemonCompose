@@ -1,4 +1,4 @@
-package com.yerayyas.pokemoncompose
+package com.yerayyas.pokemoncompose.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -17,7 +17,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.yerayyas.pokemoncompose.ui.theme.PokemonComposeTheme
+import com.yerayyas.pokemoncompose.presentation.ui.theme.PokemonComposeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -1,4 +1,4 @@
-package com.yerayyas.pokemoncompose.ui.theme
+package com.yerayyas.pokemoncompose.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build

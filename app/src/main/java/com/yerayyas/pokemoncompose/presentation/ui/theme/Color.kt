@@ -1,4 +1,4 @@
-package com.yerayyas.pokemoncompose.ui.theme
+package com.yerayyas.pokemoncompose.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
