@@ -17,6 +17,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.yerayyas.pokemoncompose.presentation.pokemon_list.PokemonListScreen
 import com.yerayyas.pokemoncompose.presentation.ui.theme.PokemonComposeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,7 +33,7 @@ class MainActivity : ComponentActivity() {
                     startDestination = "pokemon_list_screen"
                 ) {
                     composable("pokemon_list_screen") {
-
+                        PokemonListScreen(navController = navController)
                     }
                     composable(
                         "pokemon_detail_screen/{dominantColor}{pokemonName}/",
@@ -55,29 +56,29 @@ class MainActivity : ComponentActivity() {
                     }
                 }
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
+//                Surface(
+//                    modifier = Modifier.fillMaxSize(),
+//                    color = MaterialTheme.colorScheme.background
+//                ) {
+//                    Greeting("Android")
+//                }
             }
         }
     }
 }
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PokemonComposeTheme {
-        Greeting("Android")
-    }
-}
+//
+//@Composable
+//fun Greeting(name: String, modifier: Modifier = Modifier) {
+//    Text(
+//        text = "Hello $name!",
+//        modifier = modifier
+//    )
+//}
+//
+//@Preview(showBackground = true)
+//@Composable
+//fun GreetingPreview() {
+//    PokemonComposeTheme {
+//        Greeting("Android")
+//    }
+//}
