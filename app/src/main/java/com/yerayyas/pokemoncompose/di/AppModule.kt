@@ -13,6 +13,6 @@ object AppModule {
     @Provides
     @Singleton
     fun provide(){
-        
+
     }
 }
