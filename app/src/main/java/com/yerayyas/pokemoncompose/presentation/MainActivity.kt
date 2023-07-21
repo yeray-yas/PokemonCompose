@@ -3,23 +3,18 @@ package com.yerayyas.pokemoncompose.presentation
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.yerayyas.pokemoncompose.presentation.pokemon_detail.PokemonDetailScreen
 import com.yerayyas.pokemoncompose.presentation.pokemon_list.PokemonListScreen
 import com.yerayyas.pokemoncompose.presentation.ui.theme.PokemonComposeTheme
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Locale
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -36,7 +31,7 @@ class MainActivity : ComponentActivity() {
                         PokemonListScreen(navController = navController)
                     }
                     composable(
-                        "pokemon_detail_screen/{dominantColor}{pokemonName}/",
+                        "pokemon_detail_screen/{dominantColor}/{pokemonName}",
                         arguments = listOf(
                             navArgument("dominantColor") {
                                 type = NavType.IntType
@@ -53,15 +48,13 @@ class MainActivity : ComponentActivity() {
                         val pokemonName = remember {
                             it.arguments?.getString("pokemonName")
                         }
+                        PokemonDetailScreen(
+                            dominantColor = dominantColor,
+                            pokemonName = pokemonName?.lowercase(Locale.ROOT) ?: "",
+                            navController = navController
+                        )
                     }
                 }
-                // A surface container using the 'background' color from the theme
-//                Surface(
-//                    modifier = Modifier.fillMaxSize(),
-//                    color = MaterialTheme.colorScheme.background
-//                ) {
-//                    Greeting("Android")
-//                }
             }
         }
     }
